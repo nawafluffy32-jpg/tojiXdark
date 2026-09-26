@@ -1,9 +1,16 @@
 # Violet Network
 
-## Minecraft username login
+<p>
+	<a href="https://violet-network.vercel.app/" target="_blank" rel="noreferrer" aria-label="افتح موقع Violet Network" style="display:inline-flex;align-items:center;gap:8px;padding:8px 12px;background:#d62839;border-radius:4px;color:#fff;text-decoration:none;font-weight:700">
+		<span aria-hidden="true">X</span>
+		<span>افتح الموقع</span>
+	</a>
+</p>
 
-Players sign in with a Minecraft username only. The name is not verified with Mojang or Microsoft, so anyone can impersonate another player. Do not use this identity for admin authorization, purchases, or ownership checks. Sessions use random database-backed tokens in HttpOnly cookies.
+## تسجيل دخول ماينكرافت
 
-The built-in Node.js SQLite database is stored at `data/violet.sqlite` by default. Set `VIOLET_DATABASE_PATH` to a writable persistent path when deploying the app. Serverless hosts such as Vercel do not provide persistent local disk; use a persistent database before relying on saved player names there.
+الدخول يصير باسم اللاعب فقط، من 3 إلى 16 حرف أو رقم. الاسم مو متحقق منه من Mojang أو Microsoft، فممكن أي لاعب ينتحل اسم غيره. لا تعتمد عليه لصلاحيات الإدارة أو المشتريات أو إثبات ملكية الحساب.
 
-Run locally with `npm install` and `npm run dev`.
+الجلسات تنحفظ بكوكيز `HttpOnly`، وبيانات اللاعبين تنحفظ افتراضيًا بقاعدة SQLite داخل `data/violet.sqlite`. انتبه: قرص Vercel مؤقت، فقاعدة SQLite المحلية ما تضمن بقاء الحسابات بعد إعادة تشغيل التطبيق. قبل الاعتماد على تسجيل الدخول بالنشر، اربطه بقاعدة بيانات مستضافة ودائمة.
+
+للتشغيل محليًا: `npm install` وبعدها `npm run dev`.
