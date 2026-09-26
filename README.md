@@ -1,9 +1,9 @@
 # Violet Network
 
-## Email and password accounts
+## Minecraft username login
 
-Accounts use the built-in Node.js SQLite database at `data/violet.sqlite` by default. Set `VIOLET_DATABASE_PATH` to a writable persistent path when deploying the app. Passwords are stored as scrypt hashes with per-account salts; sessions use random, database-backed tokens in HttpOnly cookies. Email verification and third-party sign-in are not enabled.
+Players sign in with a Minecraft username only. The name is not verified with Mojang or Microsoft, so anyone can impersonate another player. Do not use this identity for admin authorization, purchases, or ownership checks. Sessions use random database-backed tokens in HttpOnly cookies.
 
-Registration requires a valid email and a password between 8 and 128 characters. After signing in, players add a Java-format Minecraft username (3-16 letters, digits, or underscores). The username is stored with the account, but is not verified with Mojang.
+The built-in Node.js SQLite database is stored at `data/violet.sqlite` by default. Set `VIOLET_DATABASE_PATH` to a writable persistent path when deploying the app. Serverless hosts such as Vercel do not provide persistent local disk; use a persistent database before relying on saved player names there.
 
 Run locally with `npm install` and `npm run dev`.
